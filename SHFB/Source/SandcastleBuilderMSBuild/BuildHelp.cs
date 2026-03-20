@@ -362,7 +362,7 @@ public class BuildHelp : Task, ICancelableTask, IProgress<BuildProgressEventArgs
         catch(Exception ex)
         {
             Log.LogError(null, "BHT0002", "BHT0002", "SHFB", 0, 0, 0, 0,
-                "Unable to build project '{0}': {1}", msBuildProject.FullPath, ex);
+                "Unable to build project '{0}': {1}", msBuildProject?.FullPath ?? this.ProjectFile, ex);
         }
         finally
         {
